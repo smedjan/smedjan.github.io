@@ -153,6 +153,26 @@
     });
   });
 
+  /* ── auto copy buttons on every code block (+ forge spark on copy) ── */
+  $$("pre.code").forEach(function (pre) {
+    if (pre.querySelector(".copybtn")) return;
+    var btn = document.createElement("button");
+    btn.type = "button"; btn.className = "copybtn"; btn.setAttribute("aria-label", "Copy code"); btn.textContent = "copy";
+    pre.appendChild(btn);
+    var t;
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var clone = pre.cloneNode(true), c = clone.querySelector(".copybtn"); if (c) c.remove();
+      var text = clone.textContent.replace(/ /g, " ").trim();
+      var ok = function () {
+        btn.textContent = "forged ✓"; btn.classList.add("ok"); pre.classList.add("forged");
+        if (window.__forgeSparks) { var r = btn.getBoundingClientRect(); window.__forgeSparks(r.left + r.width / 2, r.top + r.height / 2, 18, true); }
+        clearTimeout(t); t = setTimeout(function () { btn.textContent = "copy"; btn.classList.remove("ok"); pre.classList.remove("forged"); }, 1500);
+      };
+      if (navigator.clipboard) navigator.clipboard.writeText(text).then(ok, ok); else ok();
+    });
+  });
+
   /* ── ⌘K command palette (path-fallback for sub-pages) ───── */
   (function () {
     var pal = $("#palette"), input = $("#paletteinput"), list = $("#palettelist"), openBtn = $("#palettebtn");
