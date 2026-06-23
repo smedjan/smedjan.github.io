@@ -207,3 +207,6 @@
   })();
 window.SmedjanScramble = function (el) { scramble(el, JUNK, 560); };
 })();
+
+/* header reveal: hidden over the hero at top, visible once scrolling begins */
+(function(){var r=document.documentElement;function s(){r.classList.toggle('scrolled',(window.scrollY||window.pageYOffset||0)>28);}addEventListener('scroll',s,{passive:true});s();})();
