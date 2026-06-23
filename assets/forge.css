@@ -89,8 +89,7 @@ section { padding:var(--section-pad-y) 0; position:relative; scroll-margin-top:v
 /* ── nav ─────────────────────────────────────────────────── */
 .nav {
   position:fixed; inset:0 0 auto 0; height:var(--nav-h); z-index:50;
-  background:oklch(12.5% .010 252 / .72); backdrop-filter:blur(12px) saturate(1.2);
-  border-bottom:1px solid var(--line2);
+  background:transparent; border-bottom:1px solid transparent;
 }
 .nav .wrap { display:flex; align-items:stretch; height:var(--nav-h); gap:4px; max-width:1300px; }
 .brand { display:flex; align-items:center; gap:9px; font:800 15px/1 var(--f-disp); letter-spacing:.02em; text-decoration:none; color:var(--ink); padding-right:14px; }
@@ -109,7 +108,7 @@ section { padding:var(--section-pad-y) 0; position:relative; scroll-margin-top:v
 .pbar { position:absolute; left:0; bottom:-1px; height:2px; width:0; background:linear-gradient(90deg,var(--ember),var(--hot)); box-shadow:0 0 12px oklch(72% .19 45 / .6); }
 
 /* ── hero ────────────────────────────────────────────────── */
-.hero { min-height:calc(100svh - var(--nav-h)); margin-top:var(--nav-h); display:grid; align-items:center; padding:72px 0 64px; overflow:hidden; }
+.hero { min-height:100svh; margin-top:0; display:grid; align-items:center; padding:72px 0 64px; overflow:hidden; }
 .hero .wrap { display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:42px 56px; align-items:center; }
 #forge-bg { position:absolute; inset:0; width:100%; height:100%; z-index:0; opacity:.6; pointer-events:none; }
 .hero::after { content:""; position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg, oklch(12% .012 252 / .90) 0%, oklch(12% .012 252 / .58) 25%, oklch(12% .012 252 / .14) 44%, transparent 56%), linear-gradient(0deg, var(--bg) 0%, transparent 18%); }
@@ -434,14 +433,13 @@ html{font-synthesis:none;}
 .mt-bk .mt-f { color:var(--iron); }
 @media (max-width:560px){ .mt-row { grid-template-columns:1fr; gap:0; } .mt-d { color:var(--dim); } }
 
-/* ── header: one bar, hidden over the hero at top, slides in on scroll ── */
-.nav { position:fixed; top:0; left:0; right:0; z-index:90; transition:transform .4s var(--ease), opacity .3s var(--ease), background .3s var(--ease); will-change:transform; }
-body.landing .nav { transform:translateY(-100%); opacity:0; pointer-events:none; }
-html.scrolled .nav, body.subpage .nav { transform:translateY(0); opacity:1; pointer-events:auto; }
-html.scrolled .nav { background:oklch(8% .012 252 / .85); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+/* ── header: text always visible; transparent over the hero, dark bar only on scroll ── */
+.nav { z-index:90; -webkit-backdrop-filter:none; backdrop-filter:none; transition:background .3s var(--ease), border-color .3s var(--ease), backdrop-filter .3s var(--ease); }
+.nav-links a, .brand, .navbtn, .pct { text-shadow:0 1px 10px oklch(0% 0 0 / .55); }
+html.scrolled .nav { background:oklch(10% .012 252 / .82); -webkit-backdrop-filter:blur(11px) saturate(1.2); backdrop-filter:blur(11px) saturate(1.2); border-bottom-color:var(--line2); }
+html.scrolled .nav-links a, html.scrolled .brand, html.scrolled .navbtn, html.scrolled .pct { text-shadow:none; }
 .nav-links a.spons { color:var(--ember); }
 .nav-links a.spons:hover { color:var(--hot); }
-/* content pages sit below the fixed bar */
 body.subpage main.page { padding-top:calc(var(--nav-h) + 26px); }
 
 /* ── content / sub-pages ── */
