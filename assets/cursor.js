@@ -75,6 +75,7 @@
       if (e.pointerType && e.pointerType !== "mouse") return;
       strike();
       sparkBurst(e.clientX, e.clientY, 11, false);
+      ting();   // anvil ring on every strike (no-op while sound is off)
     }, { passive: true });
   }
 
@@ -84,6 +85,7 @@
     if (!audioOn) return;
     try {
       actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+      if (actx.state === "suspended") actx.resume();
       var t = actx.currentTime;
       [880, 1320].forEach(function (f, i) {
         var o = actx.createOscillator(), g = actx.createGain();
