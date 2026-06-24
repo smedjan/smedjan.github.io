@@ -1,0 +1,20 @@
+{
+  "name": "Smedjan — Pure-Rust LLM Engine",
+  "short_name": "Smedjan",
+  "description": "Pure-Rust LLM training and inference engine. Train, fine-tune, align, quantize and serve your own language models from scratch — zero Python, zero PyTorch, Metal and CUDA from one codebase.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d1014",
+  "theme_color": "#0d1014",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["developer", "productivity", "utilities"],
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

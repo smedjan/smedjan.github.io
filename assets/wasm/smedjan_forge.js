@@ -10,7 +10,7 @@ export class Forge {
         wasm.__wbg_forge_free(ptr, 0);
     }
     /**
-     * Parameter count, for the honest UI label.
+     * Parameter count, for the UI label.
      * @returns {number}
      */
     n_params() {

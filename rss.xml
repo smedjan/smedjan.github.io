@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smedjan — Notes from the forge</title>
+    <link>https://smedjan.dev/blog</link>
+    <atom:link href="https://smedjan.dev/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>Writing on building Smedjan, owning your own language models, and the road ahead.</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 24 Jun 2026 09:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Forge your own: why everyone should own their language models</title>
+      <link>https://smedjan.dev/blog/forge-your-own</link>
+      <guid isPermaLink="true">https://smedjan.dev/blog/forge-your-own</guid>
+      <pubDate>Tue, 23 Jun 2026 09:00:00 GMT</pubDate>
+      <description>Why everyone should be able to build and own their own language models, and what Smedjan is for.</description>
+    </item>
+    <item>
+      <title>The headline writes itself: a 295K model in your browser</title>
+      <link>https://smedjan.dev/blog/the-headline-writes-itself</link>
+      <guid isPermaLink="true">https://smedjan.dev/blog/the-headline-writes-itself</guid>
+      <pubDate>Tue, 23 Jun 2026 09:01:00 GMT</pubDate>
+      <description>The Smedjan home-page headline is generated live by a 295K-parameter model compiled to WebAssembly, running in your browser with no server.</description>
+    </item>
+    <item>
+      <title>What&apos;s done, and what isn&apos;t</title>
+      <link>https://smedjan.dev/blog/state-of-the-engine</link>
+      <guid isPermaLink="true">https://smedjan.dev/blog/state-of-the-engine</guid>
+      <pubDate>Tue, 23 Jun 2026 09:02:00 GMT</pubDate>
+      <description>A map of Smedjan&apos;s real state: what trains today, what is experimental, and what is still on the roadmap.</description>
+    </item>
+  </channel>
+</rss>
