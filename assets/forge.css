@@ -551,7 +551,7 @@ html.mjolnir-on, html.mjolnir-on * { cursor: none !important; }
 #mjolnir .mj-rot { transform-origin:15px 27px; }
 #mjolnir svg { display:block; filter:drop-shadow(0 2px 3px oklch(0% 0 0 /.55)); }
 .mj-hit { animation:mj-strike .26s cubic-bezier(.34,1.2,.5,1); }
-@keyframes mj-strike { 0%{transform:rotate(0)} 38%{transform:rotate(27deg)} 62%{transform:rotate(14deg)} 100%{transform:rotate(0)} }
+@keyframes mj-strike { 0%{transform:rotate(0)} 38%{transform:rotate(-27deg)} 62%{transform:rotate(-14deg)} 100%{transform:rotate(0)} }
 @media (prefers-reduced-motion: reduce){ #mjolnir{ display:none !important; } }
 @media (pointer: coarse){ #mjolnir{ display:none !important; } html.mjolnir-on, html.mjolnir-on *{ cursor:auto !important; } }
 .spark-hot { background:var(--spark); box-shadow:0 0 8px var(--hot), 0 0 14px var(--ember); width:5px; height:5px; }
