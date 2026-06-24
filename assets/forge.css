@@ -531,7 +531,12 @@ table.flags td.df { color:var(--dim); font-family:var(--f-code); white-space:now
 
 /* ── blog ───────────────────── */
 .bloggrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px; margin-top:8px; }
-.bcard { display:flex; flex-direction:column; gap:10px; padding:24px 24px 22px; border:1px solid var(--line); background:var(--bg2); text-decoration:none; transition:border-color var(--dur), transform var(--dur); }
+.bcard { display:flex; flex-direction:column; padding:0; overflow:hidden; border:1px solid var(--line); background:var(--bg2); text-decoration:none; transition:border-color var(--dur), transform var(--dur); }
+.bcard-body { display:flex; flex-direction:column; gap:10px; padding:18px 22px 20px; }
+.bmotif { line-height:0; border-bottom:1px solid var(--line); background:#0d1014; }
+.bmotif svg { display:block; width:100%; height:auto; }
+.bcard:hover .bmotif { border-bottom-color:var(--ember); }
+.bpost .bmotif { border:1px solid var(--line); margin:0 0 26px; }
 .bcard:hover { border-color:var(--ember); transform:translateY(-2px); }
 .bcard-meta { font:11px var(--f-mono); letter-spacing:.08em; text-transform:uppercase; color:var(--dim); }
 .bcard-tag { color:var(--ember); }
